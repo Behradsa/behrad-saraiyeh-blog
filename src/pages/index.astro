@@ -3,6 +3,7 @@ import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import HomeImage from "../assets/home.jpg";
 ---
 
 <!doctype html>
@@ -10,9 +11,24 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
+
   <body>
     <Header />
-    <main></main>
+    <main>
+      <h1>Hi, I'm Behrad</h1>
+      <p>
+        Welcome to my personal blog. I write about my work, ideas, experiments,
+        and the things I learn along the way. You can read more about me on the <a
+          href="/about">/about</a
+        > page, or explore all posts at
+        <a href="/blog">/blog</a>.
+        <img
+          src={HomeImage.src}
+          alt="About me"
+          style="margin-top: 1rem; display: block;"
+        />
+      </p>
+    </main>
     <Footer />
   </body>
 </html>
