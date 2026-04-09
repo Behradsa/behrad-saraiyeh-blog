@@ -4,7 +4,8 @@ FROM node:24-alpine AS builder
 
 WORKDIR /app
 
-RUN npm install -g pnpm@10.32.1 --registry=https://nexus-snapppay-gui.apps.private.okd4.teh-1.snappcloud.io/repository/npm-group --verbose
+# RUN npm install -g pnpm@10.32.1 --registry=https://nexus-snapppay-gui.apps.private.okd4.teh-1.snappcloud.io/repository/npm-group --verbose
+RUN npm install -g pnpm@10.32.1 --registry=https://mirror-npm.runflare.com --verbose
  
 COPY package.json pnpm-lock.yaml .npmrc ./
 
