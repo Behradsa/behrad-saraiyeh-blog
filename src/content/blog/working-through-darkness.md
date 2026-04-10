@@ -9,9 +9,9 @@ I want to share my experience as a Site Reliability Engineer currently working a
 
 For anyone working in software or tech, the idea of functioning without global internet seems impossible. As Iranians, we already deal with heavy restrictions: government filtering, international sanctions, and blocked access to countless essential services. VPNs and tunneling tools became part of our daily workflow—just to study, research, or do basic tasks.
 
-It’s heartbreaking, because none of this is by our choice. We’re all human, and we all deserve equal access to information. But somehow, some people end up “more equal” than others.
+<!-- It’s heartbreaking, because none of this is by our choice. We’re all human, and we all deserve equal access to information. But somehow, some people end up “more equal” than others. -->
 
-When the war between Iran and the US/Israel began, the government switched from a long blacklist to a very short whitelist. In practice, that meant no VPNs worked anymore, and global internet access became impossible. Only Iranian IPs and domestic services were reachable.
+When the war between Iran and the US/Israel began, the government switched from a long blacklist to a very short whitelist for security perposes. In practice, that meant no VPNs worked anymore, and global internet access became impossible. Only Iranian IPs and domestic services were reachable.
 
 Enough background—here’s what I struggled with, and what I did to keep going.
 
