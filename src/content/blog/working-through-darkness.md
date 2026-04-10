@@ -1,6 +1,6 @@
 ---
-title: "How to Survive the Internet Blackout in Iran as a Software Engineer"
-description: ""
+title: "Working Through Darkness: How I Stayed Productive During Iran’s Internet Blackout"
+description: "As a Site Reliability Engineer in Iran, losing global internet access could have ended my work overnight. Instead, I learned to survive—using national tools, local mirrors, and self‑hosted systems to keep developing, learning, and building through isolation. Here’s how I adapted when the internet disappeared."
 pubDate: "Apr 9 2026"
 heroImage: "../../assets/iran-no-wifi.webp"
 ---

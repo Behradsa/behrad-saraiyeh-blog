@@ -60,3 +60,10 @@ Check out [our documentation](https://docs.astro.build) or jump into our [Discor
 ## Credit
 
 This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+
+## Docker build
+
+```bash
+docker build -t registry.hamdocker.ir/behradsaraiyeh/behrad-personal-blog:1.0.0 .
+docker push registry.hamdocker.ir/behradsaraiyeh/behrad-personal-blog:1.0.0
+```

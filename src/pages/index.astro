@@ -4,6 +4,7 @@ import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 import HomeImage from "../assets/home.jpg";
+import { Image } from "astro:assets";
 ---
 
 <!doctype html>
@@ -22,10 +23,17 @@ import HomeImage from "../assets/home.jpg";
           href="/about">/about</a
         > page, or explore all posts at
         <a href="/blog">/blog</a>.
-        <img
+        <!-- <img
           src={HomeImage.src}
           alt="About me"
           style="margin-top: 1rem; display: block;"
+        /> -->
+        <Image
+          style="margin-top: 1rem; display: block"
+          src={HomeImage}
+          alt="About me"
+          loading="eager"
+          fetchpriority="high"
         />
       </p>
     </main>
