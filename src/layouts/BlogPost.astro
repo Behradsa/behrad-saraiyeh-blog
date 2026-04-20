@@ -8,10 +8,20 @@ import Header from "../components/Header.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const {
+  title,
+  description,
+  pubDate,
+  updatedDate,
+  heroImage,
+  language,
+  alternate,
+} = Astro.props;
+
+const isPersian = language === "fa";
 ---
 
-<html lang="en">
+<html lang={isPersian ? "fa" : "en"} dir="ltr">
   <head>
     <BaseHead title={title} description={description} image={heroImage} />
     <style>
@@ -36,6 +46,28 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
         padding: 1em;
         color: rgb(var(--gray-dark));
       }
+
+      /* --- Persian Specific Scoping --- */
+      .prose.persian-layout {
+        direction: rtl; /* Only flips the content inside .prose */
+        text-align: right;
+        font-family: "Vazirmatn", "Noto Sans Arabic", sans-serif;
+      }
+
+      /* Fixes for Markdown elements in RTL */
+      .persian-layout ul,
+      .persian-layout ol {
+        padding-right: 2rem;
+        padding-left: 0;
+      }
+
+      .persian-layout blockquote {
+        border-right: 4px solid #ccc;
+        border-left: none;
+        padding-right: 1rem;
+        padding-left: 0;
+      }
+
       .title {
         margin-bottom: 1em;
         padding: 1em 0;
@@ -51,6 +83,32 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
       }
       .last-updated-on {
         font-style: italic;
+      }
+
+      .lang-switch {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+      }
+
+      .lang-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.4rem 1rem;
+        border: 1px solid rgb(var(--gray-light));
+        border-radius: 999px;
+        text-decoration: none;
+        font-size: 0.85rem;
+        color: rgb(var(--gray-dark));
+        transition: all 0.2s ease;
+        /* Force the button itself to always stay LTR so the flag/text order is correct */
+        direction: ltr;
+      }
+
+      .lang-button:hover {
+        background-color: rgb(var(--black));
+        color: white  ;
       }
     </style>
   </head>
@@ -72,8 +130,23 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
             )
           }
         </div>
-        <div class="prose">
+
+        <div class={`prose ${isPersian ? "persian-layout" : ""}`}>
           <div class="title">
+            {
+              alternate && (
+                <div class="lang-switch">
+                  <a href={`/blog/${alternate}`} class="lang-button">
+                    {isPersian ? (
+                      <> EN | Read in English </>
+                    ) : (
+                      <>IR | مطالعه به فارسی </>
+                    )}
+                  </a>
+                </div>
+              )
+            }
+
             <div class="date">
               <FormattedDate date={pubDate} />
               {
