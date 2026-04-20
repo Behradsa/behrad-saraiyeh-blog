@@ -161,7 +161,7 @@ Use the filter below to quickly find mirrors for the package ecosystem you need.
 
 <tr data-tags="pypi npm">
 <td><a href="https://runflare.com/mirrors">runflare.com/mirrors</a></td>
-<td>Composer, PyPI, npm, Node.js</td>
+<td>Composer, PyPI, npm, Node.js, Maven, Linux</td>
 </tr>
 
 <tr data-tags="docker">
