@@ -11,51 +11,15 @@ import HeaderLink from "./HeaderLink.astro";
       <HeaderLink href="/blog">Blog</HeaderLink>
       <HeaderLink href="/about">About</HeaderLink>
     </div>
-    <div class="social-links">
-      <!-- GitHub -->
-      <a href="https://github.com/Behradsa" target="_blank">
-        <span class="sr-only">Go to Behrad's GitHub repo</span>
-        <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
-          ><path
-            fill="currentColor"
-            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
-          ></path></svg
-        >
-      </a>
-      <!-- LinkedIn -->
+    <div class="action-btn-container">
       <a
-        href="https://linkedin.com/in/behrad-saraiyeh"
+        href="/behrad-saraiyeh-resume-2025-08-20.pdf"
         target="_blank"
         rel="noopener noreferrer"
+        class="resume-btn"
       >
-        <span class="sr-only">Visit Behrad's LinkedIn profile</span>
-        <svg viewBox="0 0 24 24" aria-hidden="true" width="32" height="32">
-          <path
-            fill="currentColor"
-            d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2ZM8.34 17.34H6V9.66h2.34v7.68ZM7.17 8.66A1.34 1.34 0 1 1 7.18 6a1.34 1.34 0 0 1-.01 2.66ZM18 17.34h-2.33v-3.6c0-.86-.02-1.98-1.21-1.98-1.21 0-1.4.94-1.4 1.92v3.66h-2.33V9.66h2.24v1.05h.03c.31-.58 1.07-1.2 2.21-1.2 2.37 0 2.8 1.56 2.8 3.58v4.25Z"
-          ></path>
-        </svg>
+        Download Resume
       </a>
-      <!-- Email -->
-      <a href="mailto:b.saraiyeh@gmail.com">
-        <span class="sr-only">Email Behrad</span>
-        <svg viewBox="0 0 24 24" aria-hidden="true" width="32" height="32">
-          <path
-            fill="currentColor"
-            d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"
-          ></path>
-        </svg>
-      </a>
-      <!-- Phone -->
-      <!-- <a href="tel:+1234">
-      <span class="sr-only">Call Behrad</span>
-      <svg viewBox="0 0 24 24" aria-hidden="true" width="32" height="32">
-        <path
-          fill="currentColor"
-          d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1c-9.39 0-17-7.61-17-17a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.24 1.01l-2.2 2.2z"
-        ></path>
-      </svg>
-    </a> -->
     </div>
   </nav>
 </header>
@@ -66,8 +30,18 @@ import HeaderLink from "./HeaderLink.astro";
     background: white;
     box-shadow: 0 2px 8px rgba(var(--black), 5%);
   }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* Left element: grows to fill available space on the left */
   h2 {
-    flex: 1;
+    flex: 1 1 0;
+    display: flex;
+    justify-content: flex-start;
     margin: 0;
     font-size: 1em;
   }
@@ -76,51 +50,72 @@ import HeaderLink from "./HeaderLink.astro";
   h2 a.active {
     text-decoration: none;
   }
-  nav {
+
+  /* Center element: sits at the exact center without expanding */
+  .internal-links {
+    flex: 0 0 auto;
     display: flex;
     align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    margin: 0;
   }
+
+  /* Right element: matches left element's flex size to balance the layout */
+  .action-btn-container {
+    flex: 1 1 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+
   nav a {
     padding: 1em 0.5em;
     color: var(--black);
     border-bottom: 4px solid transparent;
     text-decoration: none;
   }
+
   nav a.active {
     text-decoration: none;
     border-bottom-color: var(--accent);
   }
-  .social-links,
-  .social-links a {
-    display: flex;
-  }
 
-  .social-links a {
-    text-decoration: none;
-    color: rgb(var(--gray-dark));
-  }
-  .social-links a:hover {
-    color: rgb(var(--gray));
-  }
-
-  .internal-links {
-    flex: 1;
-    display: flex;
+  .resume-btn {
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
+    padding: 0.35em 0.85em;        /* Compact padding */
+    border-radius: 6px;             /* Slight, clean roundness */
+    background-color: rgba(15, 18, 25, 0.9); /* Dark, semi-transparent background */
+    color: white !important;
+    font-size: 0.85em;             /* Slightly smaller, balanced font */
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    border-bottom: none !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease-in-out;
+    margin: 0;
   }
 
-  .social-links {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
+  .resume-btn:hover {
+    opacity: 0.95;
+    transform: translateY(-1px);  /* Subtle lift effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
   }
 
+  .resume-btn:active {
+    transform: translateY(0);    /* Tactile press response */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
   @media (max-width: 720px) {
     h2 {
       display: none;
     }
-    .social-links {
-      display: none;
+    
+    /* Ensures centering remains accurate if the logo disappears on mobile */
+    .action-btn-container {
+      justify-content: flex-end;
     }
   }
 </style>
