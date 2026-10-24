@@ -1,11 +1,11 @@
 ---
-title: "My First Year as an SRE: It's More Than Engineering"
-description: "After almost a year as an SRE at SnappPay, I've learned that reliability isn't just about tools and infrastructure. It's about understanding people, building relationships, and shaping culture."
+title: "My First Year as a SRE: It's More Than Engineering"
+description: "After almost a year as a SRE at SnappPay, I've learned that reliability isn't just about tools and infrastructure. It's about understanding people, building relationships, and shaping culture."
 pubDate: "Oct 21 2026"
 heroImage: "../../assets/American-Beaver-sitting-on-a-dam.webp"
 ---
 
-It's been almost a year since I started working as an SRE at SnappPay, and during this time, I've learned a lot about what SRE really means in practice.
+It's been almost a year since I started working as a SRE at SnappPay, and during this time, I've learned a lot about what SRE really means in practice.
 
 Our task is not just to implement SRE practices, but to build the foundation and culture for SRE in a fast-growing company. Along the way, I've realized that this is a much bigger problem than I initially thought.
 
