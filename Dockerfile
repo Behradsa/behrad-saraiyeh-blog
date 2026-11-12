@@ -4,9 +4,9 @@ FROM node:24-alpine AS builder
 
 WORKDIR /app
 
-RUN npm install -g pnpm@10.32.1
+RUN npm install -g pnpm@v12.18.0
  
-COPY package.json pnpm-lock.yaml ./
+COPY package.json pnpm-lock.yaml .npmrc ./
 
 RUN pnpm install
 
