@@ -27,8 +27,8 @@ import HeaderLink from "./HeaderLink.astro";
   header {
     margin: 0;
     padding: 0 1em;
-    background: white;
-    box-shadow: 0 2px 8px rgba(var(--black), 5%);
+    background: var(--surface);
+    box-shadow: 0 2px 8px rgba(15, 18, 25, 5%);
   }
 
   nav {
@@ -70,7 +70,7 @@ import HeaderLink from "./HeaderLink.astro";
 
   nav a {
     padding: 1em 0.5em;
-    color: var(--black);
+    color: rgb(var(--black));
     border-bottom: 4px solid transparent;
     text-decoration: none;
   }
@@ -86,8 +86,8 @@ import HeaderLink from "./HeaderLink.astro";
     justify-content: center;
     padding: 0.35em 0.85em;        /* Compact padding */
     border-radius: 6px;             /* Slight, clean roundness */
-    background-color: rgba(15, 18, 25, 0.9); /* Dark, semi-transparent background */
-    color: white !important;
+    background-color: rgba(var(--black), 0.9);
+    color: var(--on-emphasis) !important;
     font-size: 0.85em;             /* Slightly smaller, balanced font */
     font-weight: 600;
     letter-spacing: 0.02em;
